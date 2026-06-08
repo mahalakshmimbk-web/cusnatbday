@@ -33,11 +33,11 @@ function buildItems(pool, seg) {
     if (typeof image === 'string') {
       return { src: image, alt: '', emoji: '💗', caption: '' };
     }
-    return { 
-      src: image.src || '', 
-      alt: image.alt || '', 
-      emoji: image.emoji || '💗', 
-      caption: image.caption || '' 
+    return {
+      src: image.src || '',
+      alt: image.alt || '',
+      emoji: image.emoji || '💗',
+      caption: image.caption || ''
     };
   });
 
@@ -354,7 +354,7 @@ export default function DomeGallery({
       const animatingOverlay = document.createElement('div');
       animatingOverlay.className = 'enlarge-closing';
       animatingOverlay.style.cssText = `position:absolute;left:${overlayRelativeToRoot.left}px;top:${overlayRelativeToRoot.top}px;width:${overlayRelativeToRoot.width}px;height:${overlayRelativeToRoot.height}px;z-index:9999;border-radius: var(--enlarge-radius, 32px);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:all ${enlargeTransitionMs}ms ease-out;pointer-events:none;margin:0;transform:none;`;
-      
+
       const originalImg = overlay.querySelector('img');
       const originalPlaceholder = overlay.querySelector('.lightbox-placeholder');
 
@@ -487,7 +487,7 @@ export default function DomeGallery({
         const placeholderDiv = document.createElement('div');
         placeholderDiv.className = 'lightbox-placeholder';
         placeholderDiv.style.cssText = 'width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, #3D002E 0%, #0D1B2A 70%, #000 100%); border: 3px solid var(--gold-birthday);';
-        
+
         const emojiSpan = document.createElement('span');
         emojiSpan.innerText = matchingImg?.emoji || '💗';
         emojiSpan.style.cssText = 'font-size: 6rem; filter: drop-shadow(0 0 10px rgba(255,215,0,0.5));';
@@ -682,7 +682,6 @@ export default function DomeGallery({
         </div>
 
         <div className="overlay" />
-        <div className="overlay overlay--blur" />
         <div className="edge-fade edge-fade--top" />
         <div className="edge-fade edge-fade--bottom" />
 
